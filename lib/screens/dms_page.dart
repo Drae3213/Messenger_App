@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:messenger_app_01/Global_var/const_var.dart';
+import 'package:messenger_app_01/screens/Message_page.dart';
 import 'package:messenger_app_01/util/dm_card.dart';
 import 'package:messenger_app_01/util/my_card.dart';
 import 'package:messenger_app_01/util/navbar.dart';
@@ -93,7 +94,7 @@ class _DmsPageState extends State<DmsPage> with TickerProviderStateMixin {
                             CustomScrollView(
                               slivers: [
                                 SliverPadding(
-                                  padding: EdgeInsets.fromLTRB(
+                                  padding: const EdgeInsets.fromLTRB(
                                     kSidePadding,
                                     30,
                                     kSidePadding,
@@ -102,7 +103,20 @@ class _DmsPageState extends State<DmsPage> with TickerProviderStateMixin {
                                   sliver: SliverList(
                                     delegate: SliverChildBuilderDelegate(
                                       (context, index) {
-                                        return DmCard();
+                                        return GestureDetector(
+                                          onTap: () {
+                                            setState(() {
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const MessagePage(),
+                                                ),
+                                              );
+                                            });
+                                          },
+                                          child: const DmCard(),
+                                        );
                                       },
                                       childCount: 5,
                                     ),

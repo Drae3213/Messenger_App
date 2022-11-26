@@ -121,9 +121,9 @@ class _DmCardState extends State<DmCard> {
                                 ),
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
-                              width: 110,
+                              width: 75,
                             ),
                             Column(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -133,7 +133,7 @@ class _DmCardState extends State<DmCard> {
                                   height: 14.0,
                                 ),
                                 const SizedBox(
-                                  height: 2.5,
+                                  height: 7.5,
                                   width: 10,
                                 ),
                                 const Opacity(
